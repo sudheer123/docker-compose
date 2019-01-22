@@ -1,0 +1,21 @@
+version: "3"
+services:
+ drupal:
+  image: drupal
+  container_name: sudheer_drupal
+  ports:
+   - 8080:80
+  volumes:
+   - /var/www/html/demo
+  networks:
+   - frontend
+ nginx:
+  image: nginx
+  container_name: sudheer_nginx
+  ports:
+   - 8082:80
+  networks:
+   - frontend
+networks:
+ frontend:
+   driver: "bridge"
