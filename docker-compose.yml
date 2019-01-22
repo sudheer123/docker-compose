@@ -1,0 +1,19 @@
+version: '2'
+
+services:
+ drupal: 
+  image: drupal
+  ports:
+   - 8080:80
+  volumes: 
+   - /var/www/html/modules
+   - /var/www/html/profiles
+   - /var/www/html/themes
+   - /var/www/html/sites 
+   
+ postgres:
+  image: postgres
+  environment:
+   POSTGRES_USER: admin
+   POSTGRES_PASSWORD: admin  
+  
